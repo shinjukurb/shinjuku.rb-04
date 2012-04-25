@@ -3,20 +3,14 @@ module Roman
 
   def to_roman(num)
 		size = num.to_s.size
+		
+		raise InvalidArgumentError if num <= 0
+	
+		if num < 10
+			return ['','I','II','III','IV','V','VI','VII','VIII','IX'][num]
+		end
 
     case num
-		when 0
-			raise InvalidArgumentError
-    when 1
-      'I'
-    when 4
-      'IV'
-    when 5
-      'V'
-    when 6..8
-      'V' + 'I' * (num - 5)
-    when 9
-      'IX'
     when 10
       'X'
     when 50
