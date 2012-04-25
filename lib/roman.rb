@@ -19,6 +19,16 @@ module Roman
       'IX'
     when 10
       'X'
+    when 50
+      'L'
+    when 100
+      'C'
+    when 500
+      'D'
+		when 1000
+      'M'
+		when 1999
+      'MCMXCIX'
     end
   end
 

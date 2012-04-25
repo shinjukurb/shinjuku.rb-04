@@ -47,4 +47,30 @@ describe Roman do
       it { should == 'X' }
     end
   end
+
+  context "with 3 digit" do
+    subject { Roman.to_roman(num) }
+    context 'when passed 100' do
+      let(:num) { 100 }
+      it { should == 'C' }
+    end
+    context 'when passed 500' do
+      let(:num) { 500 }
+      it { should == 'D' }
+    end
+  end
+
+  context "with 4 digit" do
+    subject { Roman.to_roman(num) }
+    context 'when passed 1000' do
+      let(:num) { 1000 }
+      it { should == 'M' }
+    end
+    context 'when passed 1999' do
+      let(:num) { 1999 }
+      it { should == 'MCMXCIX' }
+    end
+  end
+
+
 end
