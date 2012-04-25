@@ -4,8 +4,7 @@ module Roman
   def to_roman(num)
 		size = num.to_s.size
 		
-		raise InvalidArgumentError if num <= 0
-	
+		raise InvalidArgumentError if num <= 0 || num >= 4000	
 		if num < 10
 			return ['','I','II','III','IV','V','VI','VII','VIII','IX'][num]
 		end
