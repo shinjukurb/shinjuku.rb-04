@@ -1,9 +1,19 @@
-require File.expand_path('../roman.rb', __FILE__)
+require "spec_helper"
 
 describe Roman do
   it { should be }
   context "with 1 digit" do
     subject { Roman.to_roman(num) }
+
+		context 'when passed 0' do
+			let(:num) { 0 }
+			it do
+				expect {
+					subject
+				}.to raise_error(Roman::InvalidArgumentError)
+			end
+		end
+
     context 'when passed 1' do
       let(:num) { 1 }
       it { should == 'I' }
@@ -37,8 +47,4 @@ describe Roman do
       it { should == 'X' }
     end
   end
-
 end
-
-
-

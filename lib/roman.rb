@@ -1,7 +1,12 @@
 module Roman
   extend self
+
   def to_roman(num)
+		size = num.to_s.size
+
     case num
+		when 0
+			raise InvalidArgumentError
     when 1
       'I'
     when 4
@@ -16,5 +21,7 @@ module Roman
       'X'
     end
   end
+
+	class InvalidArgumentError < StandardError; end 
 end
 
